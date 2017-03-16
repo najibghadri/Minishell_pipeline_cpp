@@ -4,14 +4,14 @@
 #include <deque>
 #include <string>
 
-/** \brief Saját stream osztály. Szükség volt rá mert az std stream-ek túl bonyolultak voltak.
-Egyszerû deque string alapú read/write metódusok álnak rendelkezésre. Ez hibamentes üzenetváltást enged meg.
+/** \brief SajÃ¡t stream osztÃ¡ly.A streameknÃ©l sokkal egyszerÃ»b deque string alapÃº 
+read/write metÃ³dusok Ã¡lnak rendelkezÃ©sre. Ez hibamentes Ã¼zenetvÃ¡ltÃ¡st valÃ³sÃ­t meg.
  */
 class MyStream {
 private:
     std::deque<std::string> strings;
 public:
-    /**< Sor olvasása a MyStream tárolójából */
+    /**< Sor olvasÃ¡sa a MyStream tÃ¡rolÃ³jÃ¡bÃ³l */
     const std::string read() {
         if(strings.size()){
             std::string line = strings.back();
@@ -21,7 +21,7 @@ public:
         return std::string("");
     }
 
-    /**< Sor írása a MyStream tárolójába */
+    /**< Sor Ã­rÃ¡sa a MyStream tÃ¡rolÃ³jÃ¡ba */
     void write(std::string line){
         strings.push_front(line);
     }
